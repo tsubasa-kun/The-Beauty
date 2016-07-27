@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">美吕</string>
+
+    <string name="pull_to_refresh">下拉刷新</string>
+    <string name="pull_to_refresh_from_bottom_pull_label">@string/pull_to_refresh_pull_label</string>
+    <string name="pull_to_refresh_from_bottom_refreshing_label">@string/pull_to_refresh_refreshing_label</string>
+    <string name="pull_to_refresh_from_bottom_release_label">@string/pull_to_refresh_release_label</string>
+    <string name="pull_to_refresh_pull_label">下拉刷新…</string>
+    <string name="pull_to_refresh_refreshing_label">正在载入…</string>
+    <string name="pull_to_refresh_release_label">放开以刷新…</string>
+
+    <string-array name="image_item">
+        <item>保存图片</item>
+        <item>设为壁纸</item>
+    </string-array>
+    <string name="image_save_success">图片保存成功啦~</string>
+    <string name="image_save_faile">图片下载失败啦~</string>
+    <string name="image_exists">该图片已经保存过啦</string>
+    <string name="wallpaper_success">设置壁纸成功啦~</string>
+    <string name="wallpaper_faile">设置壁纸失败啦~</string>
+
+    <string-array name="color_list">
+        <item>#00aac6</item>
+        <item>#dc4e97</item>
+        <item>#51aa53</item>
+        <item>#e76153</item>
+        <item>#81C7D4</item>
+        <item>#9a6dbb</item>
+        <item>#FEDFE1</item>
+        <item>#99CC00</item>
+        <item>#ea5272</item>
+        <item>#FFBB33</item>
+        <item>#B481BB</item>
+    </string-array>
+</resources>
