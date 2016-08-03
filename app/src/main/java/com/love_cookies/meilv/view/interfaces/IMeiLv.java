@@ -7,4 +7,5 @@ import com.love_cookies.meilv.model.bean.MeiLvBean;
  */
 public interface IMeiLv {
     void fetchData(MeiLvBean meiLvBean);
+    void fetchDataFailed();
 }

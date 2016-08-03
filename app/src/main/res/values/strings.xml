@@ -10,6 +10,8 @@
     <string name="pull_to_refresh_refreshing_label">正在载入…</string>
     <string name="pull_to_refresh_release_label">放开以刷新…</string>
 
+    <string name="fetch_data_failed">获取数据失败</string>
+
     <string-array name="image_item">
         <item>保存图片</item>
         <item>设为壁纸</item>

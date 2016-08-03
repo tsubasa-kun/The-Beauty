@@ -1,8 +1,6 @@
 package com.love_cookies.meilv.presenter;
 
-import com.love_cookies.cookie_library.application.ActivityCollections;
 import com.love_cookies.cookie_library.interfaces.CallBack;
-import com.love_cookies.cookie_library.utils.ToastUtils;
 import com.love_cookies.meilv.model.bean.MeiLvBean;
 import com.love_cookies.meilv.model.biz.MeiLvBiz;
 import com.love_cookies.meilv.view.interfaces.IMeiLv;
@@ -31,7 +29,7 @@ public class MeiLvPresenter {
 
             @Override
             public void onFailed(Object msg) {
-                ToastUtils.show(ActivityCollections.getInstance().currentActivity(), (String) msg);
+                iMeiLv.fetchDataFailed();
             }
         });
     }

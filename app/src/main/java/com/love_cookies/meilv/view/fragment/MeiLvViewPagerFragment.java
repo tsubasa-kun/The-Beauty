@@ -16,6 +16,8 @@ import com.handmark.pulltorefresh.extras.viewpager.PullToRefreshViewPager;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.love_cookies.cookie_library.fragment.BaseFragment;
 import com.love_cookies.cookie_library.utils.ProgressDialogUtils;
+import com.love_cookies.cookie_library.utils.ToastUtils;
+import com.love_cookies.meilv.R;
 import com.love_cookies.meilv.model.bean.MeiLvBean;
 import com.love_cookies.meilv.presenter.MeiLvPresenter;
 import com.love_cookies.meilv.utils.AnimatorUtils;
@@ -29,7 +31,6 @@ import com.love_cookies.meilv.view.interfaces.IRhythmItemListener;
 import com.love_cookies.meilv.view.widget.ProgressHUD;
 import com.love_cookies.meilv.view.widget.RhythmLayout;
 import com.love_cookies.meilv.view.widget.ViewPagerScroller;
-import com.love_cookies.meilv.R;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
@@ -158,6 +159,12 @@ public class MeiLvViewPagerFragment extends BaseFragment implements IMeiLv,PullT
         if (page == 1) {
             onAppPagerChange(0);
         }
+        ProgressDialogUtils.hideProgress();
+    }
+
+    @Override
+    public void fetchDataFailed() {
+        ToastUtils.show(getContext(), R.string.fetch_data_failed);
         ProgressDialogUtils.hideProgress();
     }
 
