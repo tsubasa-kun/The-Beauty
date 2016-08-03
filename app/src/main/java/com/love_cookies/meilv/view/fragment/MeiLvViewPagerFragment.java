@@ -47,8 +47,6 @@ import java.util.List;
 @ContentView(R.layout.fragment_meilv_viewpager)
 public class MeiLvViewPagerFragment extends BaseFragment implements IMeiLv,PullToRefreshBase.OnRefreshListener<ViewPager> {
 
-    @ViewInject(R.id.text_time_first)
-    private TextView mTimeFirstText;
     @ViewInject(R.id.text_time_second)
     private TextView mTimeSecondText;
 
@@ -165,7 +163,7 @@ public class MeiLvViewPagerFragment extends BaseFragment implements IMeiLv,PullT
     @Override
     public void fetchDataFailed() {
         ProgressDialogUtils.hideProgress();
-        ToastUtils.show(getContext(), R.string.fetch_data_failed);
+        ToastUtils.showError(getContext(), R.string.fetch_data_failed);
     }
 
     /**
@@ -360,6 +358,5 @@ public class MeiLvViewPagerFragment extends BaseFragment implements IMeiLv,PullT
                 }
             });
         }
-//        mTimeFirstText.setText((position + 1) + "");
     }
 }

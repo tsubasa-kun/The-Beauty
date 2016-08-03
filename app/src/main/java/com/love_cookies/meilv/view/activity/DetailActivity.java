@@ -108,7 +108,7 @@ public class DetailActivity extends BaseActivity implements IDetail, View.OnLong
             detailPresenter.downloadFile(url, imagePath);
         } else {
             ProgressDialogUtils.hideProgress();
-            ToastUtils.show(DetailActivity.this, R.string.image_exists);
+            ToastUtils.showInfo(DetailActivity.this, R.string.image_exists);
         }
     }
 
@@ -134,23 +134,23 @@ public class DetailActivity extends BaseActivity implements IDetail, View.OnLong
             WallpaperManager wallpaperManager = WallpaperManager.getInstance(this);
             wallpaperManager.setBitmap(bitmap);
             ProgressDialogUtils.hideProgress();
-            ToastUtils.show(DetailActivity.this, R.string.wallpaper_success);
+            ToastUtils.showSuccess(DetailActivity.this, R.string.wallpaper_success);
         } catch (Exception e) {
             ProgressDialogUtils.hideProgress();
-            ToastUtils.show(DetailActivity.this, R.string.wallpaper_faile);
+            ToastUtils.showError(DetailActivity.this, R.string.wallpaper_faile);
         }
     }
 
     @Override
     public void downloadFileSuccess() {
         ProgressDialogUtils.hideProgress();
-        ToastUtils.show(DetailActivity.this, R.string.image_save_success);
+        ToastUtils.showSuccess(DetailActivity.this, R.string.image_save_success);
     }
 
     @Override
     public void downloadFileFailed() {
         ProgressDialogUtils.hideProgress();
-        ToastUtils.show(DetailActivity.this, R.string.image_save_faile);
+        ToastUtils.showError(DetailActivity.this, R.string.image_save_faile);
     }
 
     @Override
@@ -162,6 +162,6 @@ public class DetailActivity extends BaseActivity implements IDetail, View.OnLong
     @Override
     public void getWallpaperFailed() {
         ProgressDialogUtils.hideProgress();
-        ToastUtils.show(DetailActivity.this, R.string.wallpaper_faile);
+        ToastUtils.showError(DetailActivity.this, R.string.wallpaper_faile);
     }
 }

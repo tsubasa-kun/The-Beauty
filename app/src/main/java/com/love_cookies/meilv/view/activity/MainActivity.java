@@ -47,7 +47,7 @@ public class MainActivity extends BaseFragmentActivity {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
             if ((System.currentTimeMillis() - exitTime) > 2000)
             {
-                ToastUtils.show(getApplicationContext(), R.string.exit_tip);
+                ToastUtils.showWarning(this, R.string.exit_tip);
                 exitTime = System.currentTimeMillis();
             } else {
                 ActivityCollections.getInstance().finishAllActivity();
