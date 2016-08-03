@@ -16,12 +16,12 @@ import com.love_cookies.cookie_library.activity.BaseActivity;
 import com.love_cookies.cookie_library.utils.ProgressDialogUtils;
 import com.love_cookies.cookie_library.utils.ToastUtils;
 import com.love_cookies.cookie_library.widget.PinchImageView;
+import com.love_cookies.meilv.R;
 import com.love_cookies.meilv.app.MeiLvApplication;
 import com.love_cookies.meilv.model.bean.MeiLvBean;
-import com.love_cookies.meilv.R;
+import com.love_cookies.meilv.presenter.DetailPresenter;
+import com.love_cookies.meilv.view.interfaces.IDetail;
 
-import org.xutils.common.Callback;
-import org.xutils.http.RequestParams;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
@@ -34,7 +34,7 @@ import java.io.File;
  * 图片详情页
  */
 @ContentView(R.layout.activity_detail)
-public class DetailActivity extends BaseActivity implements View.OnLongClickListener {
+public class DetailActivity extends BaseActivity implements IDetail, View.OnLongClickListener {
 
     private MeiLvBean.ResultsEntity mMeiLv;
     private ActionSheetDialog actionSheetDialog = null;
@@ -44,6 +44,8 @@ public class DetailActivity extends BaseActivity implements View.OnLongClickList
     private RelativeLayout rootView;
     @ViewInject(R.id.image_iv)
     private PinchImageView imageView;
+
+    private DetailPresenter detailPresenter = new DetailPresenter(this);
 
     @Override
     public void initWidget(Bundle savedInstanceState) {
@@ -103,31 +105,7 @@ public class DetailActivity extends BaseActivity implements View.OnLongClickList
     public void downloadFile(String url) {
         File file = new File(imagePath);
         if (!file.exists()) {
-            RequestParams requestParams = new RequestParams(url);
-            requestParams.setSaveFilePath(imagePath);
-            x.http().get(requestParams, new Callback.CommonCallback<File>() {
-                @Override
-                public void onSuccess(File result) {
-                    ProgressDialogUtils.hideProgress();
-                    ToastUtils.show(DetailActivity.this, R.string.image_save_success);
-                }
-
-                @Override
-                public void onError(Throwable ex, boolean isOnCallback) {
-                    ProgressDialogUtils.hideProgress();
-                    ToastUtils.show(DetailActivity.this, R.string.image_save_faile);
-                }
-
-                @Override
-                public void onCancelled(CancelledException cex) {
-
-                }
-
-                @Override
-                public void onFinished() {
-
-                }
-            });
+            detailPresenter.downloadFile(url, imagePath);
         } else {
             ProgressDialogUtils.hideProgress();
             ToastUtils.show(DetailActivity.this, R.string.image_exists);
@@ -140,31 +118,7 @@ public class DetailActivity extends BaseActivity implements View.OnLongClickList
     public void getAndSetWallpaper(String url) {
         File file = new File(imagePath);
         if (!file.exists()) {
-            RequestParams requestParams = new RequestParams(url);
-            requestParams.setSaveFilePath(imagePath);
-            x.http().get(requestParams, new Callback.CommonCallback<File>() {
-                @Override
-                public void onSuccess(File result) {
-                    Bitmap bitmap = BitmapFactory.decodeFile(imagePath);
-                    setPhoneWallpaper(bitmap);
-                }
-
-                @Override
-                public void onError(Throwable ex, boolean isOnCallback) {
-                    ProgressDialogUtils.hideProgress();
-                    ToastUtils.show(DetailActivity.this, R.string.wallpaper_faile);
-                }
-
-                @Override
-                public void onCancelled(CancelledException cex) {
-
-                }
-
-                @Override
-                public void onFinished() {
-
-                }
-            });
+            detailPresenter.getWallpaper(url, imagePath);
         } else {
             Bitmap bitmap = BitmapFactory.decodeFile(imagePath);
             setPhoneWallpaper(bitmap);
@@ -187,4 +141,27 @@ public class DetailActivity extends BaseActivity implements View.OnLongClickList
         }
     }
 
+    @Override
+    public void downloadFileSuccess() {
+        ProgressDialogUtils.hideProgress();
+        ToastUtils.show(DetailActivity.this, R.string.image_save_success);
+    }
+
+    @Override
+    public void downloadFileFailed() {
+        ProgressDialogUtils.hideProgress();
+        ToastUtils.show(DetailActivity.this, R.string.image_save_faile);
+    }
+
+    @Override
+    public void getWallpaperSuccess() {
+        Bitmap bitmap = BitmapFactory.decodeFile(imagePath);
+        setPhoneWallpaper(bitmap);
+    }
+
+    @Override
+    public void getWallpaperFailed() {
+        ProgressDialogUtils.hideProgress();
+        ToastUtils.show(DetailActivity.this, R.string.wallpaper_faile);
+    }
 }

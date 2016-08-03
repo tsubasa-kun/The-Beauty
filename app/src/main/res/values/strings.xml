@@ -16,11 +16,11 @@
         <item>保存图片</item>
         <item>设为壁纸</item>
     </string-array>
-    <string name="image_save_success">图片保存成功啦~</string>
-    <string name="image_save_faile">图片下载失败啦~</string>
-    <string name="image_exists">该图片已经保存过啦</string>
-    <string name="wallpaper_success">设置壁纸成功啦~</string>
-    <string name="wallpaper_faile">设置壁纸失败啦~</string>
+    <string name="image_save_success">图片保存成功</string>
+    <string name="image_save_faile">图片下载失败</string>
+    <string name="image_exists">该图片已经保存过</string>
+    <string name="wallpaper_success">设置壁纸成功</string>
+    <string name="wallpaper_faile">设置壁纸失败</string>
 
     <string-array name="color_list">
         <item>#00aac6</item>

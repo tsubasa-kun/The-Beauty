@@ -164,8 +164,8 @@ public class MeiLvViewPagerFragment extends BaseFragment implements IMeiLv,PullT
 
     @Override
     public void fetchDataFailed() {
-        ToastUtils.show(getContext(), R.string.fetch_data_failed);
         ProgressDialogUtils.hideProgress();
+        ToastUtils.show(getContext(), R.string.fetch_data_failed);
     }
 
     /**
