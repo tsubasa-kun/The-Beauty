@@ -31,7 +31,7 @@ import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
-import com.love_cookies.meilv.R;
+import com.love_cookies.beauty.R;
 
 @SuppressLint("ViewConstructor")
 public class IndicatorLayout extends FrameLayout implements AnimationListener {

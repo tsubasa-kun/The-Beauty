@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.love_cookies.meilv"
+        applicationId "com.love_cookies.beauty"
         minSdkVersion 19
         targetSdkVersion 23
         versionCode 1

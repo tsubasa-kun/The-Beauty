@@ -24,7 +24,7 @@ import android.view.animation.RotateAnimation;
 import android.widget.ImageView.ScaleType;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
-import com.love_cookies.meilv.R;
+import com.love_cookies.beauty.R;
 
 
 public class RotateLoadingLayout extends LoadingLayout {

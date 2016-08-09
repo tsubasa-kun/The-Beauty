@@ -31,7 +31,7 @@ import android.widget.ListView;
 
 import com.handmark.pulltorefresh.library.internal.EmptyViewMethodAccessor;
 import com.handmark.pulltorefresh.library.internal.LoadingLayout;
-import com.love_cookies.meilv.R;
+import com.love_cookies.beauty.R;
 
 
 public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView> {

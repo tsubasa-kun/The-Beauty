@@ -21,7 +21,7 @@ import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
-import com.love_cookies.meilv.R;
+import com.love_cookies.beauty.R;
 
 public class PullToRefreshViewPager extends PullToRefreshBase<ViewPager> {
 

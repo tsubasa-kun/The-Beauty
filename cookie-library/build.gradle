@@ -48,6 +48,8 @@ dependencies {
     compile 'com.github.elevenetc:textsurface:0.+'
     //带动画的喜欢按钮
     compile 'com.github.jd-alexander:LikeButton:0.+'
+    //高斯模糊
+    compile 'com.eightbitlab:blurview:1.+'
     //TastyToast
     compile 'com.sdsmdg.tastytoast:tastytoast:0.+'
 }

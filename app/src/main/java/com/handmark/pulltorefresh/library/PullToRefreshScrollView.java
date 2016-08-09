@@ -23,7 +23,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ScrollView;
 
-import com.love_cookies.meilv.R;
+import com.love_cookies.beauty.R;
 
 
 public class PullToRefreshScrollView extends PullToRefreshBase<ScrollView> {

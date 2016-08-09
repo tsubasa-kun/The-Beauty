@@ -33,7 +33,7 @@ import android.widget.ListAdapter;
 
 import com.handmark.pulltorefresh.library.internal.EmptyViewMethodAccessor;
 import com.handmark.pulltorefresh.library.internal.IndicatorLayout;
-import com.love_cookies.meilv.R;
+import com.love_cookies.beauty.R;
 
 
 public abstract class PullToRefreshAdapterViewBase<T extends AbsListView> extends PullToRefreshBase<T> implements

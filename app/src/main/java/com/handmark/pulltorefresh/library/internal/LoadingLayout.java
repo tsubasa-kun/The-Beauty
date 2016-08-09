@@ -37,7 +37,7 @@ import android.widget.TextView;
 
 import com.handmark.pulltorefresh.library.ILoadingLayout;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
-import com.love_cookies.meilv.R;
+import com.love_cookies.beauty.R;
 
 
 @SuppressLint("ViewConstructor")

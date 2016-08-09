@@ -24,7 +24,7 @@ import android.util.AttributeSet;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 
-import com.love_cookies.meilv.R;
+import com.love_cookies.beauty.R;
 
 
 public class PullToRefreshWebView extends PullToRefreshBase<WebView> {

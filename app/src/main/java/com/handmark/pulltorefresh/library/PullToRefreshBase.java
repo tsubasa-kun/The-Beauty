@@ -34,7 +34,7 @@ import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
-import com.love_cookies.meilv.R;
+import com.love_cookies.beauty.R;
 
 
 public abstract class PullToRefreshBase<T extends View> extends LinearLayout implements com.handmark.pulltorefresh.library.IPullToRefresh<T> {
