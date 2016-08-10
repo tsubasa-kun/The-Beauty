@@ -44,7 +44,7 @@ public class SplashActivity extends BaseActivity {
     @Override
     public void initWidget(Bundle savedInstanceState) {
         colorList = getResources().getStringArray(R.array.color_list);
-        int index = (int)(Math.random() * (colorList.length - 1)) + 1;
+        int index = (int)(Math.random() * colorList.length);
         rootView.setBackgroundColor(Color.parseColor(colorList[index]));
         handler.postDelayed(runnable, SPLASH_DISPLAY_DURATION);
     }
