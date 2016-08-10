@@ -27,7 +27,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginBottom="20dp"
         android:text="Cookie"
-        android:textColor="@color/white"
+        android:textColor="@color/SORA"
         android:textSize="18sp"
         android:textStyle="bold" />
 
