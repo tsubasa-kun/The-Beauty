@@ -7,7 +7,6 @@ import android.support.v4.view.ViewPager;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -57,8 +56,6 @@ public class BeautyViewPagerFragment extends BaseFragment implements IBeauty, Pu
     private View mMainView;
     @ViewInject(R.id.btn_rocket_to_head)
     private ImageButton mRocketToHeadBtn;
-    @ViewInject(R.id.btn_side_menu_or_back)
-    private Button mSideMenuOrBackBtn;
     /**
      * 钢琴布局
      */

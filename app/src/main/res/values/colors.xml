@@ -97,4 +97,7 @@
     <color name="androidColorD">#FFBB33</color>
     <color name="androidColorE">#FF4444</color>
 
+    <color name="nav_item_unchecked">#FFFFFF</color>
+    <color name="nav_item_checked">#33FE6353</color>
+
 </resources>
