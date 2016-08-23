@@ -6,21 +6,25 @@
     <string name="pull_to_refresh_from_bottom_pull_label">@string/pull_to_refresh_pull_label</string>
     <string name="pull_to_refresh_from_bottom_refreshing_label">@string/pull_to_refresh_refreshing_label</string>
     <string name="pull_to_refresh_from_bottom_release_label">@string/pull_to_refresh_release_label</string>
-    <string name="pull_to_refresh_pull_label">下拉刷新…</string>
-    <string name="pull_to_refresh_refreshing_label">正在载入…</string>
-    <string name="pull_to_refresh_release_label">放开以刷新…</string>
+    <string name="pull_to_refresh_pull_label">下拉刷新...</string>
+    <string name="pull_to_refresh_refreshing_label">正在载入...</string>
+    <string name="pull_to_refresh_release_label">放开以刷新...</string>
 
-    <string name="fetch_data_failed">获取数据失败</string>
+    <string name="fetch_data_failed">看来服务器又罢工了...</string>
 
     <string-array name="image_item">
-        <item>保存图片</item>
-        <item>设为壁纸</item>
+        <item>纳入后宫（保存图片）</item>
+        <item>上位（设为壁纸）</item>
     </string-array>
-    <string name="image_save_success">图片保存成功</string>
-    <string name="image_save_faile">图片下载失败</string>
-    <string name="image_exists">该图片已经保存过</string>
-    <string name="wallpaper_success">设置壁纸成功</string>
-    <string name="wallpaper_faile">设置壁纸失败</string>
+    <string name="image_save_success">成功纳入后宫</string>
+    <string name="image_save_faile">纳入后宫被阻挠了</string>
+    <string name="image_exists">已纳入后宫多时</string>
+    <string name="wallpaper_success">上位成功</string>
+    <string name="wallpaper_faile">上位被绊倒了</string>
+    <string name="love_success">被翻牌子，好激动</string>
+    <string name="love_faile">咦？似乎出错了</string>
+    <string name="unlove_success">居然不爱了，好伤心</string>
+    <string name="unlove_faile">咦？似乎出错了</string>
 
     <string-array name="color_list">
         <item>#00aac6</item>

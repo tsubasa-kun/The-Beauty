@@ -1,5 +1,6 @@
 package com.love_cookies.beauty.model.biz.interfaces;
 
+import com.love_cookies.beauty.model.bean.BeautyBean;
 import com.love_cookies.cookie_library.interfaces.CallBack;
 
 /**
@@ -8,5 +9,25 @@ import com.love_cookies.cookie_library.interfaces.CallBack;
  * 图片详情页事件逻辑接口
  */
 public interface IDetailBiz {
+    /**
+     * 下载文件
+     * @param url
+     * @param imagePath
+     * @param callBack
+     */
     void downloadFile(String url, String imagePath, CallBack callBack);
+
+    /**
+     * 喜欢
+     * @param beauty
+     * @param callBack
+     */
+    void doLove(BeautyBean.ResultsEntity beauty, CallBack callBack);
+
+    /**
+     * 不喜欢
+     * @param beauty
+     * @param callBack
+     */
+    void doUnLove(BeautyBean.ResultsEntity beauty, CallBack callBack);
 }

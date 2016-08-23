@@ -22,6 +22,11 @@ public class BeautyBiz implements IBeautyBiz {
     private Gson gson = new Gson();
     private String[] colorList;
 
+    /**
+     * 获取数据
+     * @param page
+     * @param callBack
+     */
     @Override
     public void getBeauty(int page, final CallBack callBack) {
         colorList = ActivityCollections.getInstance().currentActivity().getResources().getStringArray(R.array.color_list);

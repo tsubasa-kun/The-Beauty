@@ -12,6 +12,8 @@ import android.widget.RelativeLayout;
 
 import com.flyco.dialog.listener.OnOperItemClickL;
 import com.flyco.dialog.widget.ActionSheetDialog;
+import com.like.LikeButton;
+import com.like.OnLikeListener;
 import com.love_cookies.beauty.R;
 import com.love_cookies.beauty.app.BeautyApplication;
 import com.love_cookies.beauty.model.bean.BeautyBean;
@@ -44,9 +46,15 @@ public class DetailActivity extends BaseActivity implements IDetail, View.OnLong
     private RelativeLayout rootView;
     @ViewInject(R.id.image_iv)
     private PinchImageView imageView;
+    @ViewInject(R.id.like_button)
+    private LikeButton likeButton;
 
     private DetailPresenter detailPresenter = new DetailPresenter(this);
 
+    /**
+     * 初始化控件
+     * @param savedInstanceState
+     */
     @Override
     public void initWidget(Bundle savedInstanceState) {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);// 去掉信息栏
@@ -77,19 +85,43 @@ public class DetailActivity extends BaseActivity implements IDetail, View.OnLong
                 }
             }
         });
+
+        likeButton.setOnLikeListener(new OnLikeListener() {
+            @Override
+            public void liked(LikeButton likeButton) {
+                doLove(mBeauty);
+            }
+
+            @Override
+            public void unLiked(LikeButton likeButton) {
+                doUnLove(mBeauty);
+            }
+        });
     }
 
+    /**
+     * 控件点击事件
+     * @param view
+     */
     @Override
     public void widgetClick(View view) {
 
     }
 
+    /**
+     * 控件长按事件
+     * @param v
+     * @return
+     */
     @Override
     public boolean onLongClick(View v) {
         actionSheetDialog.isTitleShow(false).show();
         return true;
     }
 
+    /**
+     * Activity销毁
+     */
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -141,27 +173,94 @@ public class DetailActivity extends BaseActivity implements IDetail, View.OnLong
         }
     }
 
+    /**
+     * 下载文件成功
+     */
     @Override
     public void downloadFileSuccess() {
         ProgressDialogUtils.hideProgress();
         ToastUtils.showSuccess(DetailActivity.this, R.string.image_save_success);
     }
 
+    /**
+     * 下载文件失败
+     */
     @Override
     public void downloadFileFailed() {
         ProgressDialogUtils.hideProgress();
         ToastUtils.showError(DetailActivity.this, R.string.image_save_faile);
     }
 
+    /**
+     * 获取壁纸成功
+     */
     @Override
     public void getWallpaperSuccess() {
         Bitmap bitmap = BitmapFactory.decodeFile(imagePath);
         setPhoneWallpaper(bitmap);
     }
 
+    /**
+     * 获取壁纸失败
+     */
     @Override
     public void getWallpaperFailed() {
         ProgressDialogUtils.hideProgress();
         ToastUtils.showError(DetailActivity.this, R.string.wallpaper_faile);
     }
+
+    /**
+     * 喜欢
+     * @param beauty
+     */
+    @Override
+    public void doLove(BeautyBean.ResultsEntity beauty) {
+        detailPresenter.doLove(beauty);
+    }
+
+    /**
+     * 喜欢成功
+     */
+    @Override
+    public void doLoveSuccess() {
+        likeButton.setLiked(true);
+        ToastUtils.showSuccess(DetailActivity.this, R.string.love_success);
+    }
+
+    /**
+     * 喜欢失败
+     */
+    @Override
+    public void doLoveFailed() {
+        likeButton.setLiked(false);
+        ToastUtils.showError(DetailActivity.this, R.string.love_faile);
+    }
+
+    /**
+     * 不喜欢
+     * @param beauty
+     */
+    @Override
+    public void doUnLove(BeautyBean.ResultsEntity beauty) {
+        detailPresenter.doUnLove(beauty);
+    }
+
+    /**
+     * 不喜欢成功
+     */
+    @Override
+    public void doUnLoveSuccess() {
+        likeButton.setLiked(false);
+        ToastUtils.showError(DetailActivity.this, R.string.unlove_success);
+    }
+
+    /**
+     * 不喜欢失败
+     */
+    @Override
+    public void doUnLoveFailed() {
+        likeButton.setLiked(true);
+        ToastUtils.showError(DetailActivity.this, R.string.unlove_faile);
+    }
+
 }

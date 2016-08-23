@@ -6,6 +6,7 @@ import com.love_cookies.cookie_library.application.BaseApplication;
 import com.love_cookies.cookie_library.utils.SDCardUtils;
 import com.love_cookies.cookie_library.utils.ScreenUtils;
 
+import org.xutils.DbManager;
 import org.xutils.image.ImageOptions;
 
 import java.io.File;
@@ -24,13 +25,18 @@ public class BeautyApplication extends BaseApplication {
     //方形圆角图片设置
     public static ImageOptions SquareRadiusImageOptions = null;
     //图片文件夹路径
-    public static String FILE_PATH = SDCardUtils.getSDCardPath() + "The_Beauty/Images/";
+    public static final String FILE_PATH = SDCardUtils.getSDCardPath() + "The_Beauty/Images/";
+    //数据库路径
+    public static final String DB_PATH = SDCardUtils.getSDCardPath() + "The_Beauty/DateBase/";
+    //全局数据库
+    public static DbManager.DaoConfig daoConfig;
 
     @Override
     public void onCreate() {
         super.onCreate();
         initImageOptions();
         initFolder();
+        initDbConfig();
     }
 
     /**
@@ -61,5 +67,23 @@ public class BeautyApplication extends BaseApplication {
         if (!dir.exists()) {
             dir.mkdirs();
         }
+    }
+
+    /**
+     * 初始化本地数据库
+     */
+    public void initDbConfig() {
+        daoConfig = new DbManager.DaoConfig()
+                .setDbName("the_beauty")
+                .setDbDir(new File(DB_PATH))
+                .setDbVersion(1)
+                .setDbUpgradeListener(new DbManager.DbUpgradeListener() {
+                    @Override
+                    public void onUpgrade(DbManager db, int oldVersion, int newVersion) {
+                        // db.addColumn(...);
+                        // db.dropTable(...);
+                        // ...
+                    }
+                });
     }
 }

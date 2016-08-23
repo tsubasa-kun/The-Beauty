@@ -8,5 +8,10 @@ import com.love_cookies.cookie_library.interfaces.CallBack;
  * 获取美女图片的逻辑接口
  */
 public interface IBeautyBiz {
+    /**
+     * 获取数据
+     * @param page
+     * @param callBack
+     */
     void getBeauty(int page, CallBack callBack);
 }

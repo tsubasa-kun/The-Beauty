@@ -41,6 +41,10 @@ public class CardFragment extends BaseFragment {
         return localCardFragment;
     }
 
+    /**
+     * 初始化控件
+     * @param savedInstanceState
+     */
     @Override
     public void initWidget(Bundle savedInstanceState) {
         mBeauty = getArguments().getParcelable("beauty");
@@ -48,6 +52,10 @@ public class CardFragment extends BaseFragment {
         cardRootView.setOnClickListener(this);
     }
 
+    /**
+     * 控件点击事件
+     * @param view
+     */
     @Override
     public void widgetClick(View view) {
         Intent intent = new Intent(getActivity(), DetailActivity.class);
@@ -57,11 +65,17 @@ public class CardFragment extends BaseFragment {
         CircularAnimUtils.startActivity(getActivity(), intent, view, Color.parseColor(mBeauty.getBackgroundColor()));
     }
 
+    /**
+     * 页面销毁
+     */
     public void onDestroy() {
         coverImageView.setImageBitmap(null);
         super.onDestroy();
     }
 
+    /**
+     * View销毁
+     */
     public void onDestroyView() {
         coverImageView.setImageBitmap(null);
         super.onDestroyView();

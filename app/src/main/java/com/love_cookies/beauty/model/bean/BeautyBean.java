@@ -3,6 +3,9 @@ package com.love_cookies.beauty.model.bean;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import org.xutils.db.annotation.Column;
+import org.xutils.db.annotation.Table;
+
 import java.util.List;
 
 /**
@@ -48,16 +51,30 @@ public class BeautyBean {
         this.results = results;
     }
 
+    @Table(name = "beauty")
     public static class ResultsEntity implements Parcelable {
+        @Column(name = "id", isId = true)
+        private int id;
+
+        @Column(name = "_id")
         private String _id;
+        @Column(name = "createdAt")
         private String createdAt;
+        @Column(name = "desc")
         private String desc;
+        @Column(name = "publishedAt")
         private String publishedAt;
+        @Column(name = "source")
         private String source;
+        @Column(name = "type")
         private String type;
+        @Column(name = "url")
         private String url;
+        @Column(name = "used")
         private boolean used;
+        @Column(name = "who")
         private String who;
+        @Column(name = "backgroundColor")
         private String backgroundColor;
 
         public String get_id() {

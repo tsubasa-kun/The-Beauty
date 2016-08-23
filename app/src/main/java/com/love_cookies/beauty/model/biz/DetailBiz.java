@@ -1,9 +1,13 @@
 package com.love_cookies.beauty.model.biz;
 
-import com.love_cookies.cookie_library.interfaces.CallBack;
+import com.love_cookies.beauty.app.BeautyApplication;
+import com.love_cookies.beauty.model.bean.BeautyBean;
 import com.love_cookies.beauty.model.biz.interfaces.IDetailBiz;
+import com.love_cookies.cookie_library.interfaces.CallBack;
 
+import org.xutils.DbManager;
 import org.xutils.common.Callback;
+import org.xutils.db.sqlite.WhereBuilder;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
 
@@ -16,6 +20,12 @@ import java.io.File;
  */
 public class DetailBiz implements IDetailBiz {
 
+    /**
+     * 下载文件
+     * @param url
+     * @param imagePath
+     * @param callBack
+     */
     @Override
     public void downloadFile(String url, String imagePath, final CallBack callBack) {
         RequestParams requestParams = new RequestParams(url);
@@ -41,6 +51,38 @@ public class DetailBiz implements IDetailBiz {
 
             }
         });
+    }
+
+    /**
+     * 喜欢
+     * @param beauty
+     * @param callBack
+     */
+    @Override
+    public void doLove(BeautyBean.ResultsEntity beauty, CallBack callBack) {
+        try {
+            DbManager db = x.getDb(BeautyApplication.daoConfig);
+            db.save(beauty);
+            callBack.onSuccess(0);
+        } catch (Exception e) {
+            callBack.onFailed(1);
+        }
+    }
+
+    /**
+     * 不喜欢
+     * @param beauty
+     * @param callBack
+     */
+    @Override
+    public void doUnLove(BeautyBean.ResultsEntity beauty, CallBack callBack) {
+        try {
+            DbManager db = x.getDb(BeautyApplication.daoConfig);
+            db.delete(BeautyBean.ResultsEntity.class, WhereBuilder.b("_id", "=", beauty.get_id()));
+            callBack.onSuccess(0);
+        } catch (Exception e) {
+            callBack.onFailed(1);
+        }
     }
 
 }
