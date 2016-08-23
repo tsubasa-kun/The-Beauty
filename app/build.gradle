@@ -4,6 +4,8 @@ android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
 
+    useLibrary 'org.apache.http.legacy'
+
     defaultConfig {
         applicationId "com.love_cookies.beauty"
         minSdkVersion 19
@@ -30,4 +32,10 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile project(':cookie-library')
+    //Bmob-SDK
+    //用于兼容Android6.0系统，并提供权限管理工具
+    compile 'com.android.support:support-v4:23.2.1'
+    ////CDN文件服务使用okhttp相关包进行文件的上传和下载
+    compile 'com.squareup.okhttp:okhttp:2.+'
+    compile 'com.squareup.okio:okio:1.+'
 }
