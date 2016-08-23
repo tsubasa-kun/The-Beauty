@@ -21,6 +21,16 @@ public class DetailPresenter {
     }
 
     /**
+     * 是否喜欢
+     * @param beauty
+     * @return
+     */
+    public boolean isLove(BeautyBean.ResultsEntity beauty) {
+        boolean love = detailBiz.isLove(beauty);
+        return love;
+    }
+
+    /**
      * 下载文件
      * @param url
      * @param imagePath

@@ -21,6 +21,25 @@ import java.io.File;
 public class DetailBiz implements IDetailBiz {
 
     /**
+     * 是否喜欢
+     * @param beauty
+     */
+    @Override
+    public boolean isLove(BeautyBean.ResultsEntity beauty) {
+        try {
+            DbManager db = x.getDb(BeautyApplication.daoConfig);
+            BeautyBean.ResultsEntity love = db.selector(BeautyBean.ResultsEntity.class).where("_id", "=", beauty.get_id()).findFirst();
+            if (love != null) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    /**
      * 下载文件
      * @param url
      * @param imagePath

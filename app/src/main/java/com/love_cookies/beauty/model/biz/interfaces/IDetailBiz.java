@@ -9,6 +9,13 @@ import com.love_cookies.cookie_library.interfaces.CallBack;
  * 图片详情页事件逻辑接口
  */
 public interface IDetailBiz {
+
+    /**
+     * 是否喜欢
+     * @param beauty
+     */
+    boolean isLove(BeautyBean.ResultsEntity beauty);
+
     /**
      * 下载文件
      * @param url

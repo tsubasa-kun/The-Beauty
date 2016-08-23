@@ -86,6 +86,8 @@ public class DetailActivity extends BaseActivity implements IDetail, View.OnLong
             }
         });
 
+        likeButton.setLiked(detailPresenter.isLove(mBeauty));
+
         likeButton.setOnLikeListener(new OnLikeListener() {
             @Override
             public void liked(LikeButton likeButton) {
