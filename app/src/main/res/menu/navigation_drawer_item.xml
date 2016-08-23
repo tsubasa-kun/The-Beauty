@@ -2,20 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="all">
         <item
-            android:id="@+id/navItem1"
-            android:icon="@mipmap/ic_launcher"
-            android:title="Home"/>
+            android:id="@+id/menu_home"
+            android:icon="@mipmap/icon_menu_home"
+            android:title="@string/menu_home"/>
         <item
-            android:id="@+id/navItem2"
-            android:icon="@mipmap/ic_launcher"
-            android:title="Blog"/>
+            android:id="@+id/menu_love"
+            android:icon="@mipmap/icon_menu_love"
+            android:title="@string/menu_love"/>
         <item
-            android:id="@+id/navItem3"
-            android:icon="@mipmap/ic_launcher"
-            android:title="About"/>
-        <item
-            android:id="@+id/navItem4"
-            android:icon="@mipmap/ic_launcher"
-            android:title="Contact"/>
+            android:id="@+id/menu_about"
+            android:icon="@mipmap/icon_menu_about"
+            android:title="@string/menu_about"/>
     </group>
 </menu>

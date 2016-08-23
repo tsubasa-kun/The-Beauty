@@ -73,10 +73,21 @@ public class MainActivity extends BaseFragmentActivity implements IMain {
      */
     @Override
     public void initNavigationView() {
+        navigationView.setItemIconTintList(null);
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
+                        switch (menuItem.getItemId()) {
+                            case R.id.menu_home:
+                                break;
+                            case R.id.menu_love:
+                                break;
+                            case R.id.menu_about:
+                                break;
+                            default:
+                                break;
+                        }
                         menuItem.setChecked(true);
                         drawerLayout.closeDrawers();
                         return true;

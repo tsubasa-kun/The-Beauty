@@ -31,7 +31,6 @@
         android:background="@color/white"
         app:headerLayout="@layout/navigation_drawer_header"
         app:itemBackground="@drawable/navigation_view_item_bg"
-        app:itemIconTint="#1e2329"
         app:itemTextColor="#1e2329"
         app:menu="@menu/navigation_drawer_item" />
 

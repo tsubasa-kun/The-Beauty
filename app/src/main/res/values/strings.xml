@@ -12,6 +12,10 @@
 
     <string name="fetch_data_failed">看来服务器又罢工了...</string>
 
+    <string name="menu_home">每日一美</string>
+    <string name="menu_love">后宫佳丽</string>
+    <string name="menu_about">关于软件</string>
+
     <string-array name="image_item">
         <item>纳入后宫（保存图片）</item>
         <item>上位（设为壁纸）</item>
