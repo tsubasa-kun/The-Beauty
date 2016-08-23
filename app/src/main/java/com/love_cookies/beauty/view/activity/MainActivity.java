@@ -83,6 +83,8 @@ public class MainActivity extends BaseFragmentActivity implements IMain {
                                 break;
                             case R.id.menu_love:
                                 break;
+                            case R.id.menu_setting:
+                                break;
                             case R.id.menu_about:
                                 break;
                             default:
