@@ -2,6 +2,8 @@
 <resources>
     <string name="app_name">美吕</string>
 
+    <string name="text_null"></string>
+
     <string name="pull_to_refresh">下拉刷新</string>
     <string name="pull_to_refresh_from_bottom_pull_label">@string/pull_to_refresh_pull_label</string>
     <string name="pull_to_refresh_from_bottom_refreshing_label">@string/pull_to_refresh_refreshing_label</string>

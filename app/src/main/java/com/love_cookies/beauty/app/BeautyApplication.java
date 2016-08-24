@@ -2,6 +2,7 @@ package com.love_cookies.beauty.app;
 
 import android.widget.ImageView;
 
+import com.love_cookies.beauty.R;
 import com.love_cookies.cookie_library.application.BaseApplication;
 import com.love_cookies.cookie_library.utils.SDCardUtils;
 import com.love_cookies.cookie_library.utils.ScreenUtils;
@@ -30,10 +31,13 @@ public class BeautyApplication extends BaseApplication {
     public static final String DB_PATH = SDCardUtils.getSDCardPath() + "The_Beauty/DateBase/";
     //全局数据库
     public static DbManager.DaoConfig daoConfig;
+    //全局颜色列表
+    public static String[] colorList;
 
     @Override
     public void onCreate() {
         super.onCreate();
+        colorList = getResources().getStringArray(R.array.color_list);
         initImageOptions();
         initFolder();
         initDbConfig();

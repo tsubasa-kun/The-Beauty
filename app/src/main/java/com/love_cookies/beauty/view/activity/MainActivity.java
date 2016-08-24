@@ -1,5 +1,7 @@
 package com.love_cookies.beauty.view.activity;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentTransaction;
@@ -11,10 +13,12 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.love_cookies.beauty.R;
+import com.love_cookies.beauty.app.BeautyApplication;
 import com.love_cookies.beauty.view.fragment.BeautyViewPagerFragment;
 import com.love_cookies.beauty.view.interfaces.IMain;
 import com.love_cookies.cookie_library.activity.BaseFragmentActivity;
 import com.love_cookies.cookie_library.application.ActivityCollections;
+import com.love_cookies.cookie_library.utils.CircularAnimUtils;
 import com.love_cookies.cookie_library.utils.ToastUtils;
 
 import org.xutils.view.annotation.ContentView;
@@ -78,10 +82,15 @@ public class MainActivity extends BaseFragmentActivity implements IMain {
                 new NavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
+                        int index = (int)(Math.random() * BeautyApplication.colorList.length);
                         switch (menuItem.getItemId()) {
                             case R.id.menu_home:
                                 break;
                             case R.id.menu_love:
+                                Intent intent = new Intent(MainActivity.this, MyLoveActivity.class);
+                                int color = Color.parseColor(BeautyApplication.colorList[index]);
+                                intent.putExtra("color", color);
+                                CircularAnimUtils.startActivity(MainActivity.this, intent, navigationView, color);
                                 break;
                             case R.id.menu_setting:
                                 break;
