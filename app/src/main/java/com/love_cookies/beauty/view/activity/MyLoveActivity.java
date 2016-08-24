@@ -17,7 +17,6 @@ import com.love_cookies.beauty.app.BeautyApplication;
 import com.love_cookies.beauty.model.bean.BeautyBean;
 import com.love_cookies.beauty.presenter.MyLovePresenter;
 import com.love_cookies.beauty.view.interfaces.IMyLove;
-import com.love_cookies.beauty.view.widget.SpacesItemDecoration;
 import com.love_cookies.cookie_library.activity.BaseActivity;
 import com.love_cookies.cookie_library.adapter.CommonRecyclerAdapter;
 import com.love_cookies.cookie_library.adapter.CommonRecyclerViewHolder;
@@ -65,7 +64,6 @@ public class MyLoveActivity extends BaseActivity implements IMyLove {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
-        recyclerView.addItemDecoration(new SpacesItemDecoration(6));
         recyclerAdapter = new CommonRecyclerAdapter<BeautyBean.ResultsEntity>(this, R.layout.item_my_love_list, mData) {
             @Override
             public void setData(CommonRecyclerViewHolder holder, BeautyBean.ResultsEntity resultsEntity) {

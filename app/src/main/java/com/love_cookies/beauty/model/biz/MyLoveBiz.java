@@ -20,7 +20,7 @@ public class MyLoveBiz implements IMyLoveBiz {
     public void getBeauty(int page, CallBack callBack) {
         try {
             DbManager db = x.getDb(BeautyApplication.daoConfig);
-            List<BeautyBean.ResultsEntity> beauty = db.selector(BeautyBean.ResultsEntity.class).limit(10).offset(page * 10).findAll();
+            List<BeautyBean.ResultsEntity> beauty = db.selector(BeautyBean.ResultsEntity.class).findAll();
             if (beauty != null) {
                 callBack.onSuccess(beauty);
             } else {
