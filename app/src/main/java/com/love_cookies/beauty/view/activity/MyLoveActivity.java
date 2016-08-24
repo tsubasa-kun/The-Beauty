@@ -63,13 +63,13 @@ public class MyLoveActivity extends BaseActivity implements IMyLove {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         recyclerAdapter = new CommonRecyclerAdapter<BeautyBean.ResultsEntity>(this, R.layout.item_my_love_list, mData) {
             @Override
             public void setData(CommonRecyclerViewHolder holder, BeautyBean.ResultsEntity resultsEntity) {
                 x.image().bind((ImageView) holder.getView(R.id.image_view), resultsEntity.getUrl(), BeautyApplication.NormalImageOptions);
             }
         };
+        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         recyclerView.setAdapter(recyclerAdapter);
         recyclerAdapter.setOnItemClickListener(new OnRecyclerItemClickListener() {
             @Override
