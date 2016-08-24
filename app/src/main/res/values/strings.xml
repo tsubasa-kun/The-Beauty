@@ -33,6 +33,8 @@
     <string name="unlove_success">居然不爱了，好伤心</string>
     <string name="unlove_faile">咦？似乎出错了</string>
 
+    <string name="load_failed">召集美眉失败了</string>
+
     <string-array name="color_list">
         <item>#00aac6</item>
         <item>#dc4e97</item>
