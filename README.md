@@ -1,6 +1,6 @@
 # 基于Android的美女图片APP
 
-计划中...
+使用干货集中营的开放接口，模仿馒头先生APP和最美应用APP。
 
 ### 截图
 ![icon](http://oddu9k2hk.bkt.clouddn.com/app_icon.png)
