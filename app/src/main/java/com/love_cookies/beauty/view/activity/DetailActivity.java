@@ -142,7 +142,7 @@ public class DetailActivity extends BaseActivity implements IDetail, View.OnLong
             detailPresenter.downloadFile(url, imagePath);
         } else {
             ProgressDialogUtils.hideProgress();
-            ToastUtils.showInfo(DetailActivity.this, R.string.image_exists);
+            ToastUtils.show(DetailActivity.this, R.string.image_exists);
         }
     }
 
@@ -168,10 +168,10 @@ public class DetailActivity extends BaseActivity implements IDetail, View.OnLong
             WallpaperManager wallpaperManager = WallpaperManager.getInstance(this);
             wallpaperManager.setBitmap(bitmap);
             ProgressDialogUtils.hideProgress();
-            ToastUtils.showSuccess(DetailActivity.this, R.string.wallpaper_success);
+            ToastUtils.show(DetailActivity.this, R.string.wallpaper_success);
         } catch (Exception e) {
             ProgressDialogUtils.hideProgress();
-            ToastUtils.showError(DetailActivity.this, R.string.wallpaper_faile);
+            ToastUtils.show(DetailActivity.this, R.string.wallpaper_faile);
         }
     }
 
@@ -181,7 +181,7 @@ public class DetailActivity extends BaseActivity implements IDetail, View.OnLong
     @Override
     public void downloadFileSuccess() {
         ProgressDialogUtils.hideProgress();
-        ToastUtils.showSuccess(DetailActivity.this, R.string.image_save_success);
+        ToastUtils.show(DetailActivity.this, R.string.image_save_success);
     }
 
     /**
@@ -190,7 +190,7 @@ public class DetailActivity extends BaseActivity implements IDetail, View.OnLong
     @Override
     public void downloadFileFailed() {
         ProgressDialogUtils.hideProgress();
-        ToastUtils.showError(DetailActivity.this, R.string.image_save_faile);
+        ToastUtils.show(DetailActivity.this, R.string.image_save_faile);
     }
 
     /**
@@ -208,7 +208,7 @@ public class DetailActivity extends BaseActivity implements IDetail, View.OnLong
     @Override
     public void getWallpaperFailed() {
         ProgressDialogUtils.hideProgress();
-        ToastUtils.showError(DetailActivity.this, R.string.wallpaper_faile);
+        ToastUtils.show(DetailActivity.this, R.string.wallpaper_faile);
     }
 
     /**
@@ -226,7 +226,7 @@ public class DetailActivity extends BaseActivity implements IDetail, View.OnLong
     @Override
     public void doLoveSuccess() {
         likeButton.setLiked(true);
-        ToastUtils.showSuccess(DetailActivity.this, R.string.love_success);
+        ToastUtils.show(DetailActivity.this, R.string.love_success);
     }
 
     /**
@@ -235,7 +235,7 @@ public class DetailActivity extends BaseActivity implements IDetail, View.OnLong
     @Override
     public void doLoveFailed() {
         likeButton.setLiked(false);
-        ToastUtils.showError(DetailActivity.this, R.string.love_faile);
+        ToastUtils.show(DetailActivity.this, R.string.love_faile);
     }
 
     /**
@@ -253,7 +253,7 @@ public class DetailActivity extends BaseActivity implements IDetail, View.OnLong
     @Override
     public void doUnLoveSuccess() {
         likeButton.setLiked(false);
-        ToastUtils.showError(DetailActivity.this, R.string.unlove_success);
+        ToastUtils.show(DetailActivity.this, R.string.unlove_success);
     }
 
     /**
@@ -262,7 +262,7 @@ public class DetailActivity extends BaseActivity implements IDetail, View.OnLong
     @Override
     public void doUnLoveFailed() {
         likeButton.setLiked(true);
-        ToastUtils.showError(DetailActivity.this, R.string.unlove_faile);
+        ToastUtils.show(DetailActivity.this, R.string.unlove_faile);
     }
 
 }

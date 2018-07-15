@@ -136,6 +136,6 @@ public class MyLoveActivity extends BaseActivity implements IMyLove {
      */
     @Override
     public void getBeautyFailed() {
-        ToastUtils.showError(this, R.string.load_failed);
+        ToastUtils.show(this, R.string.load_failed);
     }
 }

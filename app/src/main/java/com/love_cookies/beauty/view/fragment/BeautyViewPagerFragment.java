@@ -160,7 +160,7 @@ public class BeautyViewPagerFragment extends BaseFragment implements IBeauty, Pu
     @Override
     public void fetchDataFailed() {
         ProgressDialogUtils.hideProgress();
-        ToastUtils.showError(getContext(), R.string.fetch_data_failed);
+        ToastUtils.show(getContext(), R.string.fetch_data_failed);
     }
 
     /**

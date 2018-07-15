@@ -119,7 +119,7 @@ public class MainActivity extends BaseFragmentActivity implements IMain {
             if (drawerLayout.isDrawerOpen(navigationView)) {//如果菜单打开就收起菜单
                 drawerLayout.closeDrawers();
             } else if ((System.currentTimeMillis() - exitTime) > 2000) {//点击两次退出逻辑
-                ToastUtils.showWarning(this, R.string.exit_tip);
+                ToastUtils.show(this, R.string.exit_tip);
                 exitTime = System.currentTimeMillis();
             } else {
                 ActivityCollections.getInstance().finishAllActivity();
